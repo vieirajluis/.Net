@@ -1,0 +1,76 @@
+﻿@using System.Text.RegularExpressions;
+@using OntarioGabinet;
+@model GabinetModel
+@{<h3>@Html.ValidationSummary()</h3>}
+@{
+    <h2>@ViewData["Title"]</h2>
+
+}
+
+
+<div id="carGabinet" class="carousel slide">
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+        @if (Model != null && Model.NameList.Count > 0 && Model.TitleList.Count > 0)
+        {
+            string name = @Model.NameList[0].InnerText.Trim('\n', '\t', '\r').Replace("<br>", "");
+            string image = string.Empty;
+            if (Model.NameList[0].Name == "h3")
+            {
+
+                image = @Regex.Match(@Model.NameList[0].InnerHtml.ToString(), @"<img\s+[^>]*src=\""([^ \""]*)\""[^>]*>").ToString();
+            }
+
+            var title = @Model.TitleList[0].InnerHtml;
+            <div class="active item" style="transition-duration:2000ms;">
+                <div class="media">
+                    <div class="media-left">
+                        @Html.Raw(@image)
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">@name</h4>
+                        <p>@Html.Raw(@title)</p>
+                    </div>
+                </div>
+                <hr>
+
+            </div>
+            @for (int i = 1; i < Model.NameList.Count && i < Model.TitleList.Count; i++)
+            {
+                if (Model.NameList[i].Name == "h3" && Model.TitleList[i].Name == "p")
+                {
+                    name = @Model.NameList[i].InnerText.Trim('\n', '\t', '\r').Replace("<br>", "");
+                    image = string.Empty;
+                    if (Model.NameList[i].Name == "h3")
+                    {
+                        image = @Regex.Match(@Model.NameList[i].InnerHtml.ToString(), @"<img\s+[^>]*src=\""([^ \""]*)\""[^>]*>").ToString();
+                    }
+
+                    title = @Model.TitleList[i].InnerHtml;
+
+
+
+                    <div class="item" style="transition-duration:2000ms;">
+                        <div class="media">
+                            <div class="media-left">
+                                @Html.Raw(@image)
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">@name</h4>
+                                <p>@Html.Raw(@title)</p>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+
+                }
+
+            }
+        }
+    </div>
+    <!-- Carousel nav -->
+    <a class="carousel-control left" href="#carGabinet" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#carGabinet" data-slide="next">&rsaquo;</a>
+</div>
+
+
