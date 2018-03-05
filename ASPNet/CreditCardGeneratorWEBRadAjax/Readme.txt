@@ -1,0 +1,1 @@
+1- How to generate and to validade Credit Card Numbers by PayPal directrixies and Luhn_algorithm.
