@@ -1,0 +1,56 @@
+﻿
+    <div id="body">
+    
+    
+        <form id="saveContactForm" method="post">
+            <h3>Create a new Contact</h3>
+            <p>
+                <label for="fcontactId">Contact Id:</label>
+                <input type="text" name="CustomerID" />
+            </p>
+            <p>
+                <label for="fcontactName">Contact Name:</label>
+                <input type="text" name="ContactName" />
+            </p>
+            <input type="button" id="saveContact" value="Save" />
+        </form>
+        <section class="content-wrapper main-content">
+            <h3>Contacts</h3>
+
+            <ul id="contacts"></ul>
+
+
+        </section>
+</div>
+@section scripts{
+<script type="text/javascript">
+    $(function () {
+
+        var id = $('#Id').val();
+
+        $.getJSON('/api/contact', function (contactsJsonPayload) {
+            $(contactsJsonPayload).each(function (i, item) {
+                $('#contacts').append('<li>' + item.CustomerID + '-' + item.ContactName + '</li>');
+            });
+        });
+
+        // Send AJX request to get the product by ID
+        $.getJSON('api/contact/' + id, function (contactsJsonPayload) {
+            $(contactsJsonPayload).each(function (i, item) {
+                $('#contacts').append('<li>' + item.CustomerID + '-' + item.ContactName + '</li>');
+            });
+        });
+
+
+        $('#saveContact').click(function () {
+            $.post("api/contact",
+                  $("#saveContactForm").serialize(),
+                  function (value) {
+                      $('#contacts').append('<li>' + value.CustomerID + '-' + value.ContactName + '</li>');
+                  },
+                  "json"
+            );
+        });
+    });
+</script>
+}
