@@ -68,7 +68,7 @@ namespace Singleton
     }
 
     /// <summary>
-    /// Startup class for Structual Singleton Design Pattern.
+    /// Startup class for Creational Singleton Design Pattern.
     /// </summary>
     class Program
     {
