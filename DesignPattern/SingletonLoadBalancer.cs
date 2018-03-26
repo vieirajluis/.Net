@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 /// defines an Instance operation that lets clients access its unique instance. Instance is a class operation.
 /// responsible for creating and maintaining its own unique instance.
 /// This structural code demonstrates the Singleton pattern which assures only a single instance (the singleton) of the class can be created.
+///Reference dofactory.com
 /// </summary>
 namespace Singleton
 {
