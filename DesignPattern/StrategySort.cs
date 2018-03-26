@@ -80,7 +80,7 @@ namespace Strategy
 
         public void SetSortStrategy(SortStrategy sortstrategy)
         {
-            this._sortstrategy = sortstrategy;//Initialization
+            this._sortstrategy = sortstrategy;//Initialization by derived strategy
         }
 
         public void Add(string name)
