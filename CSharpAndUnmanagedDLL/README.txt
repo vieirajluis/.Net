@@ -8,6 +8,17 @@ Unmanaged C++ DLL:
 2- Project Properties -> C/C++ -> Preprocessor -> Add a Custom Macro (this example is using UNMANAGED_EXPORTS)
 3- Create a global file, and set the EXPORT TAGS from the above MACRO;
 4- Include the global file on your Source Files that you want to export;
+    
+    #ifndef UNMANAGED_GLOBAL_H
+    #define UNMANAGED_GLOBAL_H
+
+    #ifdef UNMANAGED_EXPORTS
+    # define UNMANAGED_EXPORTDLL extern "C" __declspec( dllexport )
+    #else
+    # define UNMANAGED_EXPORTDLL extern "C" __declspec( dllimport )
+    #endif
+    #endif
+    
 5- Build and Deploy the generated (*.dll) file with the Caller Application (*.exe);
 
 Managed C#:
