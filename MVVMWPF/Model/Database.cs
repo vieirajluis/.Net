@@ -15,7 +15,7 @@ namespace MVVMWPF.Model
         public IList<User> getUsersDataAdapter(IList<User> _UsersList)
         {
             string queryString = "SELECT * FROM USERINFO";
-            string connection = "Data Source=AVENTATOR\\SQLEXPRESS;" + "" +
+            string connection = "Data Source=YOURDATASOURCE;" + "" +
                                 "Initial Catalog=Training;Integrated Security=True;" + 
                                 "Connect Timeout=30;Encrypt=False;" + 
                                 "TrustServerCertificate=False;ApplicationIntent=ReadWrite;" +
@@ -57,7 +57,7 @@ namespace MVVMWPF.Model
         public IList<User> getUsersDataReader(IList<User> _UsersList)
         {
             string queryString = "SELECT * FROM USERINFO";
-            string connection = "Data Source=AVENTATOR\\SQLEXPRESS;" + "" +
+            string connection = "Data Source=YOURDATASOURCE;" + "" +
                                 "Initial Catalog=Training;Integrated Security=True;" +
                                 "Connect Timeout=30;Encrypt=False;" +
                                 "TrustServerCertificate=False;ApplicationIntent=ReadWrite;" +
