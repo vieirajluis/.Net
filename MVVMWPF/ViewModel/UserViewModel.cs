@@ -15,13 +15,11 @@ namespace MVVMWPF.ViewModel
 
         public UserViewModel ()
         {
-            _UsersList = new List<User>
-            {
-                new User{UserId=1,FirstName="Joao",LastName="Vieira",City="Itaicaba",State="Ceara",Country="Brazil"},
-                new User{UserId=2,FirstName="Luis",LastName="Silva",City="Toronto",State="Ontario",Country="Canada"},
-                new User{UserId=3,FirstName="Marcos",LastName="Vieira",City="Itaicaba",State="Ceara",Country="Brazil"},
-                new User{UserId=4,FirstName="Marcia",LastName="Vieira",City="Fortaleza",State="Ceara",Country="Brazil"},
-            };
+            Database db = new Database();
+            //_UsersList = db.getUsersDataAdapter(_UsersList);
+            _UsersList = db.getUsersDataReader(_UsersList);
+
+          
         }
 
         public IList<User> UsersList { get => _UsersList; set => _UsersList = value; }
