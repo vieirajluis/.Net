@@ -24,3 +24,6 @@ Setup
       <add name="DefaultConnection" connectionString="Data Source=YOURDATASOURCE;Initial Catalog=Sales;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework" providerName="System.Data.SqlClient" />
     </connectionStrings>
 	
+	
+**This example uploads a CSV file into Entity Framework Object, and inserts in a temporary database. 
+	
