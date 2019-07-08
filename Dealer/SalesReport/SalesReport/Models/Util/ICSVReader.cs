@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SalesReport.Models.Util
 {
+	//CSV Reader Interface.
     public interface ICSVReader
     {
         void Reader(string value);
