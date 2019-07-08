@@ -13,16 +13,10 @@ Setup
 
 - Update NuGet Packages if it is applicable;
 - Web Application - Web.Config
-	Set your connectionString as following:
-	<connectionStrings>
-      <add name="SalesDBContext" connectionString="Data Source=YOURDATASOURCE;Initial Catalog=Sales;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework" providerName="System.Data.SqlClient" />
-    </connectionStrings>
+	Set your connectionString replacing the Data Source=YOURDATASOURCE;
 	
 - Unittest Application - App.config
-	Set your connectionString as following:
-	<connectionStrings>
-      <add name="DefaultConnection" connectionString="Data Source=YOURDATASOURCE;Initial Catalog=Sales;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework" providerName="System.Data.SqlClient" />
-    </connectionStrings>
+	Set your connectionString replacing the Data Source=YOURDATASOURCE;
 	
 	
 **This example uploads a CSV file into Entity Framework Object, and inserts in a temporary database. 
