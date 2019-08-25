@@ -22,7 +22,8 @@ Single Page Application - Building on Azure Microservices - Windows Platform
 		It will take care of restoring the .NET and NPM dependencies for you (though it can take a few minutes). When your dependencies are restored, 
 		just press Ctrl+F5 to launch the application in a browser as usual;
 		
-	3.2 If you’re using cmd.exe in Windows, execute setx ASPNETCORE_ENVIRONMENT "Development", and then restart your command prompt to make the change take effect:
+	3.2 If you’re using cmd.exe in Windows, execute setx ASPNETCORE_ENVIRONMENT "Development", and then restart your command prompt to make 
+		the change take effect:
 		dotnet run.
 		
 4- Publishing to Azure
