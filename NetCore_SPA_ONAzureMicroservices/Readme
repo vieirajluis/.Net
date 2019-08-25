@@ -2,18 +2,18 @@ Single Page Application - Building on Azure Microservices - Windows
 Platform
 
 1- Environment Setup: 
-1.1 Install Visual Studio 2017 Community (*Will restore .Net and NPM dependencies automatic); 
-1.2 Install Visual Studio Code; (\*\* Optional) 
+1.1 Install Visual Studio 2017 Community (**Will restore .Net and NPM dependencies automatic); 
+1.2 Install Visual Studio Code; (** Optional) 
 1.3 Install Node.js version 6 or later; 
 1.4 Install Single Page Application (SPA) templates; 
 	dotnet new --install Microsoft.AspNetCore.SpaTemplates::* //or 
-	dotnet new --install Microsoft.DotNetCore.SpaTemplates\*
+	dotnet new --install Microsoft.DotNetCore.SpaTemplates
 
 2- Generate Project: 
 2.1 Create an empty directory for it to go into, cd to that directory, and then use dotnet new to create your project;
 	dotnet new angular //or dotnet new angular -n YOUR PROJECT NAME 
 2.2 Navigate to your project folder and execute the following commands:
-	dotnet restore npm install (\*\*Visual Studio 2017 will do it automatic on Building time)
+	dotnet restore npm install (**Visual Studio 2017 will do it automatic on Building time)
 
 3- Running Application: 
 3.1 If you’re on Windows and want to use Visual Studio 2017 RC, you can simply open your newly-generated .csproj file in
