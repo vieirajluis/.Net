@@ -1,5 +1,4 @@
-Single Page Application - Building on Azure Microservices - Windows
-Platform
+Single Page Application - Building on Azure Microservices - Windows Platform
 
 1- Environment Setup: 
 1.1 Install Visual Studio 2017 Community (**Will restore .Net and NPM dependencies automatic); 
